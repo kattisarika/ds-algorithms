@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BubbleSort</title>
+</head>
+
+<body>
+    <p>BubbleSort -- What you need to know</p>
+    <ul>
+        <li> Is of the complexity O(N^2)</li>
+        <li></li>
+    </ul>
+    <script>
+        var items = [13, 12, 5, 6, 7, 9, 2];
+        var temp = '';
+
+        function bubblesort(items) {
+            for (var i = items.length - 1; i > 0; i--) {
+                for (var j = items.length - i; j > 0; j--) {
+                    if (items[j] > items[j - 1]) {
+                        temp = items[j];
+                        items[j] = items[j - 1];
+                        items[j - 1] = temp;
+                    }
+                }
+            }
+            console.log(items);
+        }
+        bubblesort(items);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 1</title>
+
+</head>
+
+<body>
+    <p>The share price for a company over a week's trading is as follows: [128, 97, 121, 123, 98, 97, 105]. If you had to buy shares in the company on one day, and sell the shares on one of the following days, write an algorithm to work out what the maximum profit you could make would be.</p>
+    <span id="result">Result:</span>
+
+    <script>
+        var sharePrice = [128, 97, 121, 123, 98, 97, 105];
+        var maxProfitshare = '';
+
+        function maxProfit(sharePrice) {
+
+            var minPrice = getMinPrice(sharePrice);
+            console.log(minPrice);
+            var maxPrice = getMaxPrice(sharePrice);
+            console.log(maxPrice);
+            maxProfitshare = maxPrice - minPrice;
+            console.log("Max Profit Per Share is " + maxProfitshare);
+            return maxProfitshare;
+
+        }
+
+        function getMinPrice(sharePrice) {
+            var minPrice = sharePrice[0];
+
+            var temp = "";
+            for (var j = 1; j <= sharePrice.length; j++) {
+                if (minPrice > sharePrice[j]) {
+                    temp = minPrice;
+                    minPrice = sharePrice[j];
+                    sharePrice = minPrice;
+                }
+                return minPrice;
+            }
+        }
+
+        function getMaxPrice(sharePrice) {
+            var maxPrice = sharePrice[0];
+            var temp = "";
+            for (var j = 1; j <= sharePrice.length; j++) {
+                if (maxPrice < sharePrice[j]) {
+                    temp = maxPrice;
+                    maxPrice = sharePrice[j];
+                    sharePrice = maxPrice;
+                }
+                return maxPrice;
+            }
+        }
+
+
+        document.getElementById("result").innerHTML = "Max Profit Per Share is " + maxProfit(sharePrice);
+    </script>
+</body>
+
+</html>

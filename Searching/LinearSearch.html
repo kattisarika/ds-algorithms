@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Linear Search</title>
+    <script>
+        var intArray = [2, 1, 6, 9, 4, 10, 12];
+        var numSearch = 6;
+
+        function LinearSearch(numSearch, intArray) {
+            for (var i = 0; i < intArray.length; i++) {
+                if (numSearch === intArray[i]) {
+                    return i;
+                }
+
+            }
+            return null;
+        }
+        var searchPosition = LinearSearch(numSearch, intArray);
+        console.log("The number " + numSearch + " is at position " + " " + searchPosition);
+    </script>
+</head>
+
+<body>
+    <p>Linear Search --- What you need to know</p>
+    <ul>
+        <li>Takes sorted or unsorted array </li>
+        <li>Is of the complexity O(n) </li>
+
+    </ul>
+
+</body>
+
+</html>

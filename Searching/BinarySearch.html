@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Search</title>
+
+    <script>
+        var intArray = [3, 7, 8, 9, 10, 12, 16, 18, 19, 21, 23, 25, 27, 29, 31];
+        var numSearch = 25;
+
+        function binarySearch(numSearch, intArray) {
+            var low = 0;
+            var high = intArray.length - 1;
+            while (low <= high) {
+                var mid = (low + high) / 2;
+
+
+                if ((mid % 1) > 1) {
+                    mid = Math.ceil(mid);
+                }
+                if (numSearch === intArray[mid]) {
+                    return mid;
+                }
+                if (numSearch > intArray[mid]) {
+
+                    low = mid + 1;
+
+                } else {
+                    high = high + 1;
+
+                }
+
+            }
+            return null;
+        }
+
+        var num = binarySearch(numSearch, intArray)
+        console.log(num);
+    </script>
+</head>
+
+<body>
+    <p>Binary Search --- What you need to know</p>
+    <ul>
+        <li>Always takes sorted array</li>
+        <li>Is of the complexity O(log (n)) </li>
+
+    </ul>
+
+</body>
+
+</html>
